@@ -7,6 +7,16 @@ URP_Portal
 <img width="995" height="558" alt="image" src="https://github.com/user-attachments/assets/bd3a71c4-2938-4e31-a5be-be7cbecefa1f" />
 
 
+### 요약
+1.	두 포탈이 서로의 뷰를 RenderTexture에 그림
+2.	포탈 카메라를 반대편 포탈 위치로 변환
+3.	Oblique Projection으로 포탈 표면에서 정확히 자름
+4.	재귀적으로 7번 렌더링하여 무한 거울 효과 생성
+5.	결과를 포탈 머티리얼에 표시
+
+----
+### 포탈이란
+
 - 2개의 Portal 오브젝트가 서로 연결되어 있음
 - 각 포털은 상대방 포털을 통해 보이는 장면을 RenderTexture에 렌더링
 - portalCamera가 실제 렌더링을 수행하는 카메라
@@ -137,3 +147,12 @@ Vector4 clipPlaneCameraSpace =
 ```C#
 UniversalRenderPipeline.RenderSingleCamera(SRC, portalCamera);
 ```
+
+### 재귀 렌더링 효과
+
+iterations = 7일 때:
+- 6번째 반복: 가장 깊은 포탈 안의 포탈
+- 5번째 반복: 그 다음 깊이
+- ...
+- 0번째 반복: 첫 번째 포탈 뷰
+- 깊은곳 부터 그려야 올바른 재귀 효과가 나옴.
