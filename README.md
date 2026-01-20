@@ -1,5 +1,4 @@
 # URP_Portal
-URP_Portal
 
 
 ### Portal 통해 서로를 볼 수 있는 재귀적 렌더링 시스템
@@ -156,3 +155,12 @@ iterations = 7일 때:
 - ...
 - 0번째 반복: 첫 번째 포탈 뷰
 - 깊은곳 부터 그려야 올바른 재귀 효과가 나옴.
+
+
+----
+### 참고
+
+[![Video Label](http://img.youtube.com/vi/TkzASwVgnj8/0.jpg)](https://youtu.be/TkzASwVgnj8)
+
+
+
